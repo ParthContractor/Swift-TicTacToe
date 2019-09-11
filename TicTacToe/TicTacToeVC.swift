@@ -95,7 +95,6 @@ class TicTacToeVC: UIViewController{
         sender.isSelected = true
         print("square position is \(sender.position.description)")
         TicTacToeStore.playerMoveUpdate(sender.position)
-        print("selectedSquareCounter is \(TicTacToeStore.selectedSquareCounter)")
 
         if WinLogicUtility.checkIfPlayerWins(sender.position) {
             title = "\(TicTacToeNextMove.player)->\(TicTacToeNextMove.player.getSymbol()) WON.."
@@ -111,7 +110,7 @@ class TicTacToeVC: UIViewController{
       }
     }
     
-    func showAlertMessage() {
+    private func showAlertMessage() {
         let alertController = UIAlertController(title: "GAME OVER", message: title, preferredStyle:UIAlertController.Style.alert)
         
         alertController.addAction(UIAlertAction(title: "OK-Restart", style: UIAlertAction.Style.default)

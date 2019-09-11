@@ -22,8 +22,26 @@ struct WinLogicUtility{
             return true
         }
         
+        //Primary diagonal.. check
+        var primaryDiagonalArray = [Int]()
+        for index in 0..<numberOfSquares {
+            primaryDiagonalArray.append(TicTacToeStore.boardMappingArray[index][index])
+        }
+        let fullPrimaryDiagonalSelectedByThisPlayer = primaryDiagonalArray.allSatisfy { $0 == position.player!.rawValue }
+        if fullPrimaryDiagonalSelectedByThisPlayer {
+            return true
+        }
+        
+        //Anti-diagonal.. check
+        var antiDiagonalArray = [Int]()
+        for index in 0..<numberOfSquares {
+            antiDiagonalArray.append(TicTacToeStore.boardMappingArray[index][numberOfSquares - index - 1])
+        }
+        let fullAntiDiagonalSelectedByThisPlayer = antiDiagonalArray.allSatisfy { $0 == position.player!.rawValue }
+        if fullAntiDiagonalSelectedByThisPlayer {
+            return true
+        }
         
         return false
-        //diagonals check
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
-let numberOfSquares = 3//This is to determine how many squares needs to be considered for a tic tac toe board
+let numberOfSquares = 4//This is to determine how many squares needs to be considered for a tic tac toe board
 //For iPhone 5s-->5 is a good number to go for
 //Mapping??Dynamic??
 
