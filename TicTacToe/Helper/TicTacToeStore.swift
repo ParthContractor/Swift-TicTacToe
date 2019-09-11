@@ -32,5 +32,9 @@ struct TicTacToeStore {//In memory storage(2D array for board state management)
     }
     
     static var selectedSquareCounter = 0//to check draw condition(full board state)
+    
+    static var diagonalArray = [Int]()
+    static var antiDiagonalArray = [Int]()
+
 }
 

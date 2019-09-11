@@ -95,17 +95,30 @@ class TicTacToeVC: UIViewController{
         sender.isSelected = true
         print("square position is \(sender.position.description)")
         TicTacToeStore.playerMoveUpdate(sender.position)
-        
+        print("selectedSquareCounter is \(TicTacToeStore.selectedSquareCounter)")
+
         if WinLogicUtility.checkIfPlayerWins(sender.position) {
-            title = "Player \(TicTacToeNextMove.player) WON.."
+            title = "\(TicTacToeNextMove.player)->\(TicTacToeNextMove.player.getSymbol()) WON.."
+            showAlertMessage()
         }
         else if TicTacToeStore.selectedSquareCounter == (numberOfSquares*numberOfSquares) {
             title = "Draw Game.."
+            showAlertMessage()
         }
         else{
             TicTacToeNextMove.updateNextTurnPlayer()
-            title = "NEXT-Player\(TicTacToeNextMove.player)"
-        }
+            title = "NEXT-Player\(TicTacToeNextMove.player)->\(TicTacToeNextMove.player.getSymbol())"
+      }
+    }
+    
+    func showAlertMessage() {
+        let alertController = UIAlertController(title: "GAME OVER", message: title, preferredStyle:UIAlertController.Style.alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK-Restart", style: UIAlertAction.Style.default)
+        { action -> Void in
+            self.resetTapped()
+        })
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @objc func resetTapped() {
@@ -114,6 +127,7 @@ class TicTacToeVC: UIViewController{
         TicTacToeStore.clear()
         ticTacToeBoardSetUp()
         title = defaultNavigationTitle
+        TicTacToeStore.selectedSquareCounter = 0
     }
 
 }

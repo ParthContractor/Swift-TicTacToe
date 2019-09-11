@@ -17,7 +17,7 @@ class TicTacToeSquareButton: UIButton {
             disableInteraction()//restrict selection once player selected(position locked in boardstore)
             lastSelectedByPlayer()//Initially position is without any associated player; but after selection update with respective value
             
-            //Now update turn for next player and set 'O' or 'X' based on player's associated mark/symbol
+            //set 'O' or 'X' based on player's associated mark/symbol
             updateSymbolSelection()
         }
     }
