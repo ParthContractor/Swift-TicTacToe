@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ParentViewController.swift
 //  TicTacToe
 //
 //  Created by Parth on 11/09/19.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ParentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.TicTacToeThemeColor.backgroundColorShade
     }
-
-
 }
-

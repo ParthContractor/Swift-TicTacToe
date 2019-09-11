@@ -16,7 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        redirectToTicTacToeBoardScreen()
+        decorateNavigationBarAppearance()
         return true
+    }
+    
+    func redirectToTicTacToeBoardScreen(){
+        let ticTacToeVC = TicTacToeVC(
+            nibName: "TicTacToeVC",
+            bundle: nil)
+        let navigationController = UINavigationController(rootViewController: ticTacToeVC)
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.isNavigationBarHidden = true
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func decorateNavigationBarAppearance() {
+        UINavigationBar.appearance().tintColor = UIColor.TicTacToeThemeColor.buttonBackgroundColorShade
+        UINavigationBar.appearance().barTintColor = UIColor.white
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

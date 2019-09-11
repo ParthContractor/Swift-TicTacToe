@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B2EDA65F2328A53800F31408 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA65E2328A53800F31408 /* AppDelegate.swift */; };
-		B2EDA6612328A53800F31408 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA6602328A53800F31408 /* ViewController.swift */; };
-		B2EDA6642328A53800F31408 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA6622328A53800F31408 /* Main.storyboard */; };
 		B2EDA6662328A53900F31408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA6652328A53900F31408 /* Assets.xcassets */; };
 		B2EDA6692328A53900F31408 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA6672328A53900F31408 /* LaunchScreen.storyboard */; };
 		B2EDA6742328A53900F31408 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA6732328A53900F31408 /* TicTacToeTests.swift */; };
 		B2EDA67F2328A53900F31408 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA67E2328A53900F31408 /* TicTacToeUITests.swift */; };
+		B2EDA6952328CAD500F31408 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA68E2328CAD500F31408 /* UIColorExtension.swift */; };
+		B2EDA6982328CAD500F31408 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA6912328CAD500F31408 /* ParentViewController.swift */; };
+		B2EDA69F2328CBF700F31408 /* TicTacToeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EDA69C2328CBF700F31408 /* TicTacToeVC.xib */; };
+		B2EDA6A02328CBF700F31408 /* TicTacToeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDA69D2328CBF700F31408 /* TicTacToeVC.swift */; };
+		B2EDAF122328E0DB00F31408 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDAF112328E0DB00F31408 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,6 @@
 /* Begin PBXFileReference section */
 		B2EDA65B2328A53800F31408 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EDA65E2328A53800F31408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B2EDA6602328A53800F31408 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B2EDA6632328A53800F31408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2EDA6652328A53900F31408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2EDA6682328A53900F31408 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2EDA66A2328A53900F31408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,11 @@
 		B2EDA67A2328A53900F31408 /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EDA67E2328A53900F31408 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		B2EDA6802328A53900F31408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2EDA68E2328CAD500F31408 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B2EDA6912328CAD500F31408 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		B2EDA69C2328CBF700F31408 /* TicTacToeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicTacToeVC.xib; sourceTree = "<group>"; };
+		B2EDA69D2328CBF700F31408 /* TicTacToeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicTacToeVC.swift; sourceTree = "<group>"; };
+		B2EDAF112328E0DB00F31408 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				B2EDA65E2328A53800F31408 /* AppDelegate.swift */,
-				B2EDA6602328A53800F31408 /* ViewController.swift */,
-				B2EDA6622328A53800F31408 /* Main.storyboard */,
+				B2EDA69D2328CBF700F31408 /* TicTacToeVC.swift */,
+				B2EDA69C2328CBF700F31408 /* TicTacToeVC.xib */,
+				B2EDA68C2328CAD500F31408 /* Helper */,
 				B2EDA6652328A53900F31408 /* Assets.xcassets */,
 				B2EDA6672328A53900F31408 /* LaunchScreen.storyboard */,
 				B2EDA66A2328A53900F31408 /* Info.plist */,
@@ -123,6 +130,16 @@
 				B2EDA6802328A53900F31408 /* Info.plist */,
 			);
 			path = TicTacToeUITests;
+			sourceTree = "<group>";
+		};
+		B2EDA68C2328CAD500F31408 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDAF112328E0DB00F31408 /* Constants.swift */,
+				B2EDA68E2328CAD500F31408 /* UIColorExtension.swift */,
+				B2EDA6912328CAD500F31408 /* ParentViewController.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +246,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EDA69F2328CBF700F31408 /* TicTacToeVC.xib in Resources */,
 				B2EDA6692328A53900F31408 /* LaunchScreen.storyboard in Resources */,
 				B2EDA6662328A53900F31408 /* Assets.xcassets in Resources */,
-				B2EDA6642328A53800F31408 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2EDA6612328A53800F31408 /* ViewController.swift in Sources */,
+				B2EDAF122328E0DB00F31408 /* Constants.swift in Sources */,
 				B2EDA65F2328A53800F31408 /* AppDelegate.swift in Sources */,
+				B2EDA6A02328CBF700F31408 /* TicTacToeVC.swift in Sources */,
+				B2EDA6982328CAD500F31408 /* ParentViewController.swift in Sources */,
+				B2EDA6952328CAD500F31408 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +313,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2EDA6622328A53800F31408 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2EDA6632328A53800F31408 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2EDA6672328A53900F31408 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,7 +445,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop/SampleObjCApp",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop/Infosys_Assignment/Carthage/Checkouts/SDWebImage/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop/Infosys_Assignment/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TicTacToe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +470,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop/SampleObjCApp",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop/Infosys_Assignment/Carthage/Checkouts/SDWebImage/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/TicTacToe/Helper/Desktop/Infosys_Assignment/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TicTacToe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
