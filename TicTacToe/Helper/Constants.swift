@@ -11,8 +11,17 @@ import UIKit
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
-let numberOfSquares = 7
+let numberOfSquares = 6//This is to determine how many squares needs to be considered for a tic tac toe board
+//For iPhone 5s-->5 is a good number to go for
+//Mapping??Dynamic??
 
-let squareWidth: CGFloat = 7
-let squareHeight: CGFloat = 7
+let squareWidthHeight: CGFloat = 50//This is is considered to be a safe(tappable) area hence taken square dimension accordingly..
 
+let minimumSpacingRequiredBetweenColumns: CGFloat = 17.5//This is the minimum spacing we have taken into consideration for a standard/decent looking UI of a tic tac toe board..
+
+let startRowColumnIndex = 0
+
+let seperatorLineWidth: CGFloat = 3
+
+let player1SelectionSymbol = "X"
+let player2SelectionSymbol = "O"

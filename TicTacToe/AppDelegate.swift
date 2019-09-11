@@ -27,15 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             nibName: "TicTacToeVC",
             bundle: nil)
         let navigationController = UINavigationController(rootViewController: ticTacToeVC)
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.isNavigationBarHidden = true
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.isNavigationBarHidden = false
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
     
     func decorateNavigationBarAppearance() {
-        UINavigationBar.appearance().tintColor = UIColor.TicTacToeThemeColor.buttonBackgroundColorShade
-        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.TicTacToeThemeColor.navigationButtonColor
+        UINavigationBar.appearance().barTintColor = UIColor.TicTacToeThemeColor.navigationBarColor
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

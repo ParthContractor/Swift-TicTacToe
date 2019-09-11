@@ -1,0 +1,33 @@
+//
+//  TicTacToeStore.swift
+//  TicTacToe
+//
+//  Created by Parth on 11/09/19.
+//  Copyright © 2019 Parth. All rights reserved.
+//
+
+import Foundation
+
+struct TicTacToeStore {//In memory storage(2D array for board state management)
+    static var boardMappingArray: [[Int]] = []//It will be populated with default 0 while initial boardSetUp
+    
+    static func setupStore(_ rowArray:[Int]){//2D array --> initial setup without any movements in game
+        //By default 0 will be assigned to signify no player has selected the square yet !
+        TicTacToeStore.boardMappingArray.append(rowArray)
+    }
+    
+    static func playerMoveUpdate(_ selectedSquare: Position){
+        guard let player = selectedSquare.player else {
+            fatalError("Bad state(Developer Error)-->Please cross check if player is properly updated in Position associated after square selection")
+        }
+        //1 denotes player1 has selected that square
+        //2 denotes player2 has selected that square
+        TicTacToeStore.boardMappingArray[selectedSquare.row][selectedSquare.column] = player.rawValue
+        print("updated TicTacToeStore:", TicTacToeStore.boardMappingArray)
+    }
+    
+    static func clear(){//While resetting the board to start new game
+        TicTacToeStore.boardMappingArray.removeAll()
+    }
+}
+

@@ -11,7 +11,10 @@ import UIKit
 extension UIColor {
     struct TicTacToeThemeColor {
         static let backgroundColorShade = UIColor(red:151/255, green:178/255 ,blue:203/255, alpha:1.00)
-        static let labelColorShade = UIColor.black
-        static let buttonBackgroundColorShade = UIColor.red
+        static let navigationBarColor = UIColor.orange
+        static let seperatorColor = UIColor.orange
+        static let defaultSquareColor = UIColor.red
+        static let navigationButtonColor = UIColor.red
+        static let selectedSquareColor = UIColor.gray
     }
 }
