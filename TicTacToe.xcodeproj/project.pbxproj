@@ -22,6 +22,8 @@
 		B2EDAF1A2329138700F31408 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDAF192329138700F31408 /* UIViewExtension.swift */; };
 		B2EDAF1C23293D6400F31408 /* TicTacToeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDAF1B23293D6400F31408 /* TicTacToeStore.swift */; };
 		B2EDAF1E2329540200F31408 /* TicTacToeNextMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDAF1D2329540200F31408 /* TicTacToeNextMove.swift */; };
+		B2EDAF20232964C300F31408 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDAF1F232964C300F31408 /* ArrayExtension.swift */; };
+		B2EDAF22232967BA00F31408 /* WinLogicUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDAF21232967BA00F31408 /* WinLogicUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		B2EDAF192329138700F31408 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B2EDAF1B23293D6400F31408 /* TicTacToeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeStore.swift; sourceTree = "<group>"; };
 		B2EDAF1D2329540200F31408 /* TicTacToeNextMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeNextMove.swift; sourceTree = "<group>"; };
+		B2EDAF1F232964C300F31408 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		B2EDAF21232967BA00F31408 /* WinLogicUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLogicUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 				B2EDAF192329138700F31408 /* UIViewExtension.swift */,
 				B2EDAF1B23293D6400F31408 /* TicTacToeStore.swift */,
 				B2EDAF1D2329540200F31408 /* TicTacToeNextMove.swift */,
+				B2EDAF1F232964C300F31408 /* ArrayExtension.swift */,
+				B2EDAF21232967BA00F31408 /* WinLogicUtility.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2EDAF22232967BA00F31408 /* WinLogicUtility.swift in Sources */,
 				B2EDAF122328E0DB00F31408 /* Constants.swift in Sources */,
 				B2EDAF1E2329540200F31408 /* TicTacToeNextMove.swift in Sources */,
 				B2EDA65F2328A53800F31408 /* AppDelegate.swift in Sources */,
@@ -298,6 +305,7 @@
 				B2EDAF1A2329138700F31408 /* UIViewExtension.swift in Sources */,
 				B2EDA6952328CAD500F31408 /* UIColorExtension.swift in Sources */,
 				B2EDAF142328FE7400F31408 /* TicTacToeSquareButton.swift in Sources */,
+				B2EDAF20232964C300F31408 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

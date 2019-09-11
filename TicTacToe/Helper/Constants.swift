@@ -25,3 +25,7 @@ let seperatorLineWidth: CGFloat = 3
 
 let player1SelectionSymbol = "X"
 let player2SelectionSymbol = "O"
+
+let defaultNavigationTitle = "Amex - Tic Tac Toe"
+
+let defaultValueInitialBoardState = 0//default cannot be Player enum values(1 or 2) because they are used for its selection logic in board state

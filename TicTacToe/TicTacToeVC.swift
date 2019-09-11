@@ -21,12 +21,12 @@ class TicTacToeVC: UIViewController{
         if numberOfSquares <= 2 {
             fatalError("Logical-Constraint->Minimum 3 number of squares required for standard 2 player Tic Tac Toe setup")
         }
-        title = "Amex - Tic Tac Toe"
+        title = defaultNavigationTitle
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "RESET", style: .plain, target: self, action: #selector(TicTacToeVC.resetTapped))
         ticTacToeBoardSetUp()
     }
     
-    // MARK: - Board UI Rendering setup(Programattic algorithm including initial store(board state) setup(with default 0))
+    // MARK: - Board UI Rendering setup(Programmatic algorithm including initial store(board state) setup(with default 0))
     private func ticTacToeBoardSetUp() {
         var row = startRowColumnIndex
         var column = startRowColumnIndex
@@ -51,27 +51,29 @@ class TicTacToeVC: UIViewController{
             btn.tag = i
             btn.position = Position(row: row, column: column)
             btn.frame = CGRect.init(x: originX, y: originY, width: squareWidthHeight, height: squareWidthHeight)
-            
             btn.addTarget(self, action: #selector(TicTacToeVC.squareTapped), for: .touchUpInside)
-
-            //logic to switch to next column(item) in given row
-            originX = originX + squareWidthHeight + minimumSpacingRequiredBetweenColumns
             self.view.addSubview(btn)
+
+            //logic to switch to next column(item) in given row..
+            originX = originX + squareWidthHeight + minimumSpacingRequiredBetweenColumns
             
             //column seperator line logic(remove if not required)
             let columnSeperator = UIView.init(frame: CGRect.init(x: originX - (minimumSpacingRequiredBetweenColumns/2) - (seperatorLineWidth/2), y: originY - minimumSpacingRequiredBetweenColumns, width: seperatorLineWidth, height: squareWidthHeight + (minimumSpacingRequiredBetweenColumns*2)))
             columnSeperator.backgroundColor = UIColor.TicTacToeThemeColor.seperatorColor
 
             column = column + 1
-            rowArray.append(0)
+            if defaultValueInitialBoardState == Player.Player1.rawValue || defaultValueInitialBoardState == Player.Player2.rawValue {
+                fatalError("(Developer Error)-->Default cannot be same as player 1 or 2 raw value")
+            }
+            rowArray.append(defaultValueInitialBoardState)//initial setup(0) for each row in 2D array to manage board state
+            
             if i % numberOfSquares == 0 {//logic to switch to next row in grid
-                
-                //This will update the 2D array with initial default(0)
+                //This will update the 2D array with initial default(0) for given row before switching to next one
                 TicTacToeStore.setupStore(rowArray)
-                rowArray = [Int]()//for next row iteration
+                rowArray = [Int]()//reset required for next row iteration..
                 
-                column = startRowColumnIndex
-                row = row + 1
+                column = startRowColumnIndex//reset column for next row cycle..
+                row = row + 1//increment row count..
                 originX = remainingSpace / 2
                 originY = originY + spacingBetweenRows + squareWidthHeight
                 
@@ -93,7 +95,17 @@ class TicTacToeVC: UIViewController{
         sender.isSelected = true
         print("square position is \(sender.position.description)")
         TicTacToeStore.playerMoveUpdate(sender.position)
-        self.title = "NEXT-Player\(TicTacToeNextMove.player)"
+        
+        if WinLogicUtility.checkIfPlayerWins(sender.position) {
+            title = "Player \(TicTacToeNextMove.player) WON.."
+        }
+        else if TicTacToeStore.selectedSquareCounter == (numberOfSquares*numberOfSquares) {
+            title = "Draw Game.."
+        }
+        else{
+            TicTacToeNextMove.updateNextTurnPlayer()
+            title = "NEXT-Player\(TicTacToeNextMove.player)"
+        }
     }
     
     @objc func resetTapped() {
@@ -101,7 +113,7 @@ class TicTacToeVC: UIViewController{
         TicTacToeNextMove.player = .Player1
         TicTacToeStore.clear()
         ticTacToeBoardSetUp()
-        self.title = "Amex - Tic Tac Toe"
+        title = defaultNavigationTitle
     }
 
 }

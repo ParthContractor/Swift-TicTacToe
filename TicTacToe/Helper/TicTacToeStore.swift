@@ -23,11 +23,14 @@ struct TicTacToeStore {//In memory storage(2D array for board state management)
         //1 denotes player1 has selected that square
         //2 denotes player2 has selected that square
         TicTacToeStore.boardMappingArray[selectedSquare.row][selectedSquare.column] = player.rawValue
+        selectedSquareCounter = selectedSquareCounter + 1//keep increasing counter for all selection so that it's easier to get final/full state for draw condition check..
         print("updated TicTacToeStore:", TicTacToeStore.boardMappingArray)
     }
     
     static func clear(){//While resetting the board to start new game
         TicTacToeStore.boardMappingArray.removeAll()
     }
+    
+    static var selectedSquareCounter = 0//to check draw condition(full board state)
 }
 

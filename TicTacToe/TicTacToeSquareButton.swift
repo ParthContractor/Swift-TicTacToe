@@ -18,7 +18,7 @@ class TicTacToeSquareButton: UIButton {
             lastSelectedByPlayer()//Initially position is without any associated player; but after selection update with respective value
             
             //Now update turn for next player and set 'O' or 'X' based on player's associated mark/symbol
-            updateNextTurnPlayer()
+            updateSymbolSelection()
         }
     }
     
@@ -53,14 +53,12 @@ class TicTacToeSquareButton: UIButton {
         self.position.updatePlayer(TicTacToeNextMove.player)
     }
     
-    private func updateNextTurnPlayer() {
+    private func updateSymbolSelection() {
         if TicTacToeNextMove.player == .Player1 {
             self.setTitle(player1SelectionSymbol, for: .normal)
-            TicTacToeNextMove.player = .Player2
         }
         else{
             self.setTitle(player2SelectionSymbol, for: .normal)
-            TicTacToeNextMove.player = .Player1
         }
     }
 }
