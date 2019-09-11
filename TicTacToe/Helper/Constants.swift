@@ -11,9 +11,11 @@ import UIKit
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
-let numberOfSquares = 4//This is to determine how many squares needs to be considered for a tic tac toe board
-//For iPhone 5s-->5 is a good number to go for
-//Mapping??Dynamic??
+let numberOfSquares = 10//This is to determine how many squares needs to be considered for a tic tac toe board
+//For iPhone 5s-->4 is a good maximum number for rendering
+//For iPhone x/max-->6 is a good maximum for rendering
+//For iPads 9.7/ipad air-->10 is a good maximum number to render proper UI
+//For iPads 12.9-->15 is a good maximum number to render proper UI
 
 let squareWidthHeight: CGFloat = 50//This is is considered to be a safe(tappable) area hence taken square dimension accordingly..
 
