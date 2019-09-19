@@ -9,9 +9,9 @@
 import Foundation
 
 struct TicTacToeStore {//In memory storage(2D array for board state management)
-    static var boardMappingArray: [[Int]] = []//It will be populated with default 0 while initial boardSetUp
-    
-    static func setupStore(_ rowArray:[Int]){//2D array --> initial setup without any movements in game
+    static private(set) var boardMappingArray: [[Int]] = []//It will be populated with default 0 while initial boardSetUp
+        
+    static func setUpZeroStateStore(_ rowArray:[Int]){//2D array --> initial setup without any movements in game
         //By default 0 will be assigned to signify no player has selected the square yet !
         TicTacToeStore.boardMappingArray.append(rowArray)
     }
@@ -23,8 +23,7 @@ struct TicTacToeStore {//In memory storage(2D array for board state management)
         //1 denotes player1 has selected that square
         //2 denotes player2 has selected that square
         TicTacToeStore.boardMappingArray[selectedSquare.row][selectedSquare.column] = player.rawValue
-        selectedSquareCounter = selectedSquareCounter + 1//keep increasing counter for all selection so that it's easier to get final/full state for draw condition check..
-//        print("updated TicTacToeStore:", TicTacToeStore.boardMappingArray)
+        selectedSquareCounter += 1//keep increasing counter for all selection so that it's easier to get final/full state for draw condition check..
     }
     
     static func clear(){//While resetting the board to start new game
@@ -32,9 +31,5 @@ struct TicTacToeStore {//In memory storage(2D array for board state management)
     }
     
     static var selectedSquareCounter = 0//to check draw condition(full board state)
-    
-    static var diagonalArray = [Int]()
-    static var antiDiagonalArray = [Int]()
-
 }
 
