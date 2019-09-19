@@ -36,7 +36,7 @@ class TicTacToeSquareButton: UIButton {
     }
     
     private func decorateButton() {
-        self.backgroundColor = UIColor.TicTacToeThemeColor.defaultSquareColor
+        backgroundColor = UIColor.TicTacToeThemeColor.defaultSquareColor
     }
     
     private func animate() {
