@@ -46,19 +46,19 @@ class TicTacToeSquareButton: UIButton {
     }
     
     private func disableInteraction() {
-        self.isUserInteractionEnabled = false
+        isUserInteractionEnabled = false
     }
     
     private func lastSelectedByPlayer() {
-        self.position.updatePlayer(TicTacToeNextMove.player)
+        position.updatePlayer(TicTacToeNextMove.player)
     }
     
     private func updateSymbolSelection() {
         if TicTacToeNextMove.player == .Player1 {
-            self.setTitle(player1SelectionSymbol, for: .normal)
+            setTitle(player1SelectionSymbol, for: .normal)
         }
         else{
-            self.setTitle(player2SelectionSymbol, for: .normal)
+            setTitle(player2SelectionSymbol, for: .normal)
         }
     }
 }
