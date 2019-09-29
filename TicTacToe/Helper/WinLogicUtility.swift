@@ -43,7 +43,7 @@ struct WinLogicUtility{
     
     private static func fullPrimaryDiagonalSelectedByThisPlayer(_ position: Position) -> Bool {
         var primaryDiagonalArray = [Int]()
-        for index in 0..<numberOfSquares {
+        for index in 0..<TicTacToeVC.numberOfSquaresForBoardSetup {
             primaryDiagonalArray.append(TicTacToeStore.boardMappingArray[index][index])
         }
         return primaryDiagonalArray.allSatisfy { $0 == position.player!.rawValue }
@@ -51,8 +51,8 @@ struct WinLogicUtility{
     
     private static func fullAntiDiagonalSelectedByThisPlayer(_ position: Position) -> Bool {
         var antiDiagonalArray = [Int]()
-        for index in 0..<numberOfSquares {
-            antiDiagonalArray.append(TicTacToeStore.boardMappingArray[index][numberOfSquares - index - 1])
+        for index in 0..<TicTacToeVC.numberOfSquaresForBoardSetup {
+            antiDiagonalArray.append(TicTacToeStore.boardMappingArray[index][TicTacToeVC.numberOfSquaresForBoardSetup - index - 1])
         }
         return antiDiagonalArray.allSatisfy { $0 == position.player!.rawValue }
     }
