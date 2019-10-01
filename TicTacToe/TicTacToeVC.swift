@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias resetBoardSetupFunction = ()  -> Void
+typealias AnyFunc = ()  -> Void
 
 class TicTacToeVC: UIViewController,UITextFieldDelegate{
     static var numberOfSquaresForBoardSetup = numberOfSquares//This is to determine how many squares needs to be considered for a tic tac toe board based on user input from navigation bar textfield
@@ -32,7 +32,7 @@ class TicTacToeVC: UIViewController,UITextFieldDelegate{
     private func rightNavigationBarButtonsSetup() {
         let textInput = UITextField()
         textInput.borderStyle = .roundedRect
-        textInput.placeholder = "Enter number of squares of your choice for board setup"
+        textInput.placeholder = "Enter N.."
         textInput.text = "\(TicTacToeVC.numberOfSquaresForBoardSetup)"
         textInput.textAlignment = .center
         textInput.textColor = .black
@@ -142,11 +142,11 @@ class TicTacToeVC: UIViewController,UITextFieldDelegate{
         ticTacToeBoardSetUp()
         title = defaultNavigationTitle
         TicTacToeStore.selectedSquareCounter = 0
-        self.navigationController?.navigationBar.endEditing(true)
+        navigationController?.navigationBar.endEditing(true)
     }
     
     // MARK: - Helper methods
-    private func showAlertMessage(_ title: String,_ message: String?, _ actionButtonTitle: String, actionSelector:resetBoardSetupFunction?) {
+    private func showAlertMessage(_ title: String,_ message: String?, _ actionButtonTitle: String, actionSelector:AnyFunc?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle:UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: actionButtonTitle, style: UIAlertAction.Style.default)
         { action -> Void in
@@ -154,7 +154,7 @@ class TicTacToeVC: UIViewController,UITextFieldDelegate{
                 act()
             }
         })
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
         
     // MARK: - UITextField Delegates
@@ -168,8 +168,10 @@ class TicTacToeVC: UIViewController,UITextFieldDelegate{
         // add their new text to the existing text
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         
-        // make sure the result is under 2 characters
-        return updatedText.count <= 2
+        let allowedCharacters = CharacterSet(charactersIn:"0123456789")//Here change this characters based on your requirement
+        let characterSet = CharacterSet(charactersIn: updatedText)
+        return allowedCharacters.isSuperset(of: characterSet) && updatedText.count <= 2
+        // make sure the result is under 2 characters and accepts numbers only
     }
     
     @objc func textFieldDidChange(_ textField: UITextField){
